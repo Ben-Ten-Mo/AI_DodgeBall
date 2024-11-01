@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.InputSystem;
 
-
 public class PickUpController : MonoBehaviour
 {
+    /*
     public Rigidbody rb;
     public SphereCollider coll;
     [SerializeField] public Transform player;
@@ -44,10 +44,11 @@ public class PickUpController : MonoBehaviour
             transform.localScale = Vector3.one;
 
             rb.isKinematic = true;
-            coll.isTrigger = true;
+            coll.enabled = false;
         }
     }
 
+    /*
     public void Drop(InputAction.CallbackContext context) {
         if (!context.started || !equipped) return;
         equipped = false;
@@ -61,8 +62,11 @@ public class PickUpController : MonoBehaviour
         //rb.AddForce(camera.up * dropUpwardForce, ForceMode.Impulse);
         
         rb.isKinematic = false;
-        coll.isTrigger = false;
+        coll.enabled = true;
+
+
     }
+    
 
     public void Throw(InputAction.CallbackContext context) {
         if (!context.started || !equipped) return;
@@ -77,10 +81,15 @@ public class PickUpController : MonoBehaviour
         //rb.AddForce(camera.up * dropUpwardForce, ForceMode.Impulse);
         
         rb.isKinematic = false;
-        coll.isTrigger = false;
+        coll.enabled = true;
+
+
 
         //transform.position += player.right * 40.0f * Time.deltaTime;
         //rb.Move(player.right * 40.0f * Time.deltaTime);
     }
+
+    */
+    
 
 }

@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 input;
     private CharacterController characterController;
     private Vector3 direction;
+    public InputActionAsset inputActionAsset;
     [SerializeField] private float speed;
 
     //Movement Variables for Sprinting Action
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
     //Gravity Variables
     private float gravity = -9.81f;
     [SerializeField] private float gravityMultiplier = 3.0f;
-    private float velocity;
+    public float velocity;
 
     // Jump Variables
     [SerializeField] private float jumpPower;
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update() {
-        Debug.Log(direction * dashSpeed * Time.deltaTime);
+        // Debug.Log(direction * dashSpeed * Time.deltaTime);
         ApplyRotation();
         if (!dashing) {
             ApplyGravity();
